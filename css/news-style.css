@@ -1,0 +1,27 @@
+/*news specific stuff*/
+body{
+    background-color:black;
+    color:grey;
+}
+h1{
+    text-align:top;
+    z-index: 0;
+}
+/*just your normal block container thingy*/
+.newsblock{
+    flex-grow:1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:baseline;
+}
+
+/*live preview stuff*/
+.box{
+    display: none;
+    width: 100%;
+}
+a:hover + .box,.box:hover{
+    float:left;
+    display: block;
+    position: flex;
+}

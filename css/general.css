@@ -1,0 +1,222 @@
+/*general.css has all the general css code, used to create a central color pallete and design */
+/*There has been thought about css piority, so therefore most element-properties are assigned first*/
+html, 
+body {/*css reset because i had wierd lines*/
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+p{/*so people can actually read the text*/
+    font-size:20px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family:"Audiowide";/*very nice font*/
+    font: size 200000;/*Does nothing*/
+}
+iframe {/*Used mainly in news.html*/
+    border-bottom: 4px solid rgb(255, 102, 0);
+    border-right: 4px solid;
+    border-image-source:linear-gradient(to bottom,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 1;
+}
+table{
+    overflow: hidden;
+    border: 1px solid #111111;
+    border-collapse: collapse;
+}
+/*all of these tr and th things allow me to make a fancy table at table.html*/
+tr:hover{
+    background-color: rgba(185, 129, 92,0.19);
+    margin-top:5%;
+    height:90%;
+    text-align: center;
+}
+td:hover,th:hover{
+    border:3px solid rgb(255, 102, 0);
+    color:white;
+}  
+td,th{
+    position: relative;
+    border: 1px solid #111111;
+    border-collapse: collapse;
+}
+td:hover::after,th:hover::after{
+    border:none;
+    content: "";
+    position: absolute;
+    background-color: rgba(185, 129, 92,0.1);
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+/*was recommended by stackoverflow*/
+.ignore-css{/* for stuff that needs to be cleaned*/
+    all:unset; 
+}
+/*allows me to get animated hr's. I understand all the properties*/
+.colored,.colored2 {
+    margin:0px;
+    height:10px;
+    border-radius:2px;
+    border-top: 0;
+    border-image-slice: 1;
+    background-origin: content-box;
+    background-size: 200%;
+    animation-name: colored;
+    animation-iteration-count: infinite;/*works forever*/
+    animation-timing-function: steps(512);/*precise enough, higher just decreases performance imo*/
+    width: 100%;
+}
+.colored{
+    animation-duration: 10s;/*long enough to not be annoying, but still noticeable*/
+    /*colors are from red>blue>red because otherwise it won't loop nicely*/
+    background-image: linear-gradient(to right,red, orange , yellow,lightgreen, cyan, blue,blue,cyan,lightgreen,yellow,orange,red);
+}
+.colored2{
+    animation-duration:2s;
+    background-image: linear-gradient(to right,rgba(255, 102, 0,0),rgba(255, 102, 0,0.8),rgba(255, 102, 0,0));
+} 
+  @keyframes colored {
+      /*keyframes allow me to move the hr through the visual area (camera), very similar to blender animation*/
+    from {background-position: 0% 0%;}  
+      to {background-position: 200% 0%;}
+}
+/*used in middle-side, gives structure without being boxy*/
+.block1{
+    border-top: 4px solid rgb(255, 102, 0);
+    border-right: 4px solid;
+    border-image-source:linear-gradient(to top,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 1;
+}
+.block2{
+    border-bottom: 4px solid rgb(255, 102, 0);
+    border-right: 4px solid;
+    border-image-source:linear-gradient(to bottom,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 1;
+}
+.block3{
+    border-top: 4px solid rgb(255, 102, 0);
+    border-left: 4px solid;
+    border-image-source:linear-gradient(to top,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 1;
+}
+.block4{
+    border-bottom: 4px solid rgb(255, 102, 0);
+    border-left: 4px solid;
+    border-image-source:linear-gradient(to bottom,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 1;
+}
+/*simple, fits color theme. used in right-side */
+.newsblock{
+    display:inline-block;
+    border: 4px solid;
+    border-image-source:linear-gradient(90deg,rgba(255, 102, 0,0.2),rgba(8,8,8,0.2),rgba(255, 102, 0,0.2));
+    border-image-slice: 1;
+}
+.newsblock:hover{/*allows me to get a cool glow when hovered*/
+    display:inline-block;
+    border: 4px solid;
+    border-image-source:linear-gradient(80deg,rgba(8,8,8,0.2),rgb(255, 102, 0),rgba(8,8,8,0.2));
+    border-image-slice: 1;
+    background-color:rgba(255, 102, 0,0.1);
+}
+a{
+    font-family:"Audiowide";
+    float:top;
+}
+/*these a-properties make much use of css's extensive system of nth-child last and stuff like that*/
+/*structure in psuedocode:*/
+/*a-element, when used as link/hover/activated, but not if link-classes include .ignore-css*/
+a:link:not(.ignore-css) {
+    color: grey;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height:25px;
+}   
+ a:hover:not(.ignore-css){
+    color: white;
+    border: 4px solid;
+    border-image-source:linear-gradient(180deg,rgb(255, 102, 0),rgba(8,8,8,0.2),rgb(255, 102, 0));
+    height:18px;
+    font-size:110%;
+    border-image-slice: 1;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}  
+a:active.links:not(.ignore-css),a:visited.links:not(.ignore-css) {
+    color: cyan;
+}
+/*Basically all the paragraphs on the website*/
+.maintext{
+    color:grey;
+    font-size: 48;
+    text-size-adjust: 10;
+}
+.mainlist,li{/*has to include li as u tags are not affected as line level elements*/
+    color:grey;
+    font-size: 40 !important;
+    text-align:left;
+}
+/*image stuff*/
+.mainimg{
+    vertical-align:middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 4px solid;
+    border-image-source: linear-gradient(180deg,rgba(8,8,8,0.2),rgb(255, 102, 0));
+    border-image-slice: 4;
+}
+.maintable{
+    color:grey;
+}
+/*these three classes are what makes the website work*/
+/*flex properties allow for it to work at most used resolutions, including 2560x1080, 1440p, and probably 4k too*/
+.leftside,.rightside,.mainside{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.leftside{
+    /*linear-gradient creates a faint vignette effect*/
+    background-image:linear-gradient(-95deg,rgba(0,0,1,1),rgba(61, 61, 61, 0.379));
+    text-align: center;
+    width:25%;
+    z-index:1;/* Stay on top */
+    top: 0;/* Stay on top */
+    padding-top: 2px;
+    
+}
+.mainside{
+    background-image:rgb(0,0,0);
+    margin-left: 25%;
+    margin: 1 auto;
+    text-align: center;
+    width:50%;
+    z-index:1;/* Stay on top */
+    top: 0;/* Stay on top */
+    padding-top: 5px;
+}
+.rightside{
+     /*linear-gradient creates a faint vignette effect*/
+    background-image:linear-gradient(95deg,rgba(0,0,1,1),rgba(61, 61, 61, 0.379));
+    text-align: center;
+    margin-left: 75%;
+    width:25%;
+    z-index:1;/* Stay on top */
+    top: 0;/* Stay on top */
+    right: 0;/* Stay right */
+    padding-top: 2px;
+}
+
+/*body at bottom because lowest piority*/
+body{
+    /*seems to stop ending humanity, so i didn't remove it*/
+    width:100%;
+}
