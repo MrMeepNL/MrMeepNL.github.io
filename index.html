@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
-
+<!--im sorry that there is no js, but this is a html-css project and js is hard to implement properly-->
+<!--index is home page-->
 <head>
+    <!--head contains meta tags, title, and stylesheet links-->
   <meta charset="utf-8">
   <title>PCMasterRace Fan Page</title>
-  <meta name="author" content="">
-  <meta name="description" content="">
+  <meta name="author" content="Noah K">
+  <meta name="description" content="Gamer Computer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!--need to import audiowide font from google's font api-->
   <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <!--links to stylesheets. type had to be defined, otherwise html5 doesn't detect them-->
+  <link href="css/general.css" rel="stylesheet" type="text/css">
+  <link href="css/index-style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+    <!--body is in summary: div div div thing /div /div /div thing /div-->
+    <!--divs are used everywhere to allow for greater css use-->
     <div class="leftside">
         <h1 class="maintext">Navagation</h1>
-        <a href="whypc.html"  title="Why PC" target="_blank">Why PC?</a>
-        <a href="guide.html"  title="EntryGuide" target="_blank">Guide</a>
-        &nbsp
+        <!--links use target=_blank so you dont have to keep going back to reread after clicking accidentally-->
+        <a href="whypc.html"  title="Why PC" target="_blank">Why PC?</a>     
+        &nbsp<!--my code needs personal space, it has feelings-->
         <div class="links">
             <h1 class="maintext">Links</h1>
+            <!--Linky bois-->
             <a href="https://www.reddit.com/r/pcmasterrace"  title="PC Master Race on Reddit" target="_blank">r/pcmasterrace</a>
             <a href="https://twitter.com/OfficialPCMR"  title="PC Master Race on Twitter" target="_blank">OfficialPCMR Twitter</a>
             <a href="https://www.facebook.com/OfficialPCMasterRace"  title="PC Master Race on Facebook" target="_blank">OfficialPCMasterRace Facebook</a>
@@ -30,8 +36,8 @@
             <a href="https://steamcommunity.com/groups/steampcmasterrace"  title="PC Master Race on Steam" target="_blank">PCMasterRace Steam Group</a>
             <a href="https://www.youtube.com/channel/UCqpfJtpeBIV_nr7FH2xrPow"  title="PC Master Race on YouTube" target="_blank">PCMasterRace YT Channel</a>
         </div>
-
     </div>
+    <!--all pages's mainside follow the same weaving line pattern, with rainbow bars to scare off console peasants-->
     <div class="mainside">
         <img class="mainimg" src="assets/rainbow-logo.gif" alt="rainbowlogo" style="float:center;">
         <hr class="colored">
@@ -48,22 +54,45 @@
             <p class="maintext">
                 The term "PCMasterRace" was first shown to the world by comedic writer Ben Croshaw in 2008. Although intially meant as a poke of fun towards
                 the elitist attiude of the Witcher Community, it quickly spread, as do all internet quotes, to become an well-known expression of pride
-                of what PCs have become. While it is technacilly a reference to Nazi-Germany's idea of a "master race", most users of the term do not 
+                of what PCs have become. While it is technically a reference to Nazi-Germany's idea of a "master race", most users of the term do not 
                 associate with that at all. This can be argued to be positive, as the previous use of the reference is no longer publicly used.
             </p>
         </div>
-        <hr class="colored">
-        <div class="block3" style="height:50px">
-            &nsbp
-        </div>
+        <hr class="colored"> 
     </div>
+    <!--just repetition of newsblocks-->
     <div class="rightside">
         <h1 class="maintext">Current News</h1>
-        <a href="news.html"  title="morenews" target="_blank">More News</a>
+        <a href="news.html"  title="More/Detailed News" target="_blank" style="font-size:18px;"><u>More News/Details</u></a>
+        <div class="newsblock">
+            <p class="maintext">
+                5550 XT Release
+            </p>
+        </div>
+        <div class="newsblock">
+            <p class="maintext">
+                Intel 42nm shortage
+            </p>
+        </div>
+        <div class="newsblock">
+            <p class="maintext">
+                GTX 3070 worse than 1080Ti?
+            </p>
+        </div>
+        <div class="newsblock">
+            <p class="maintext">
+                Corsair releases upside down keyboard
+            </p>
+        </div>
+        <div class="newsblock">
+            <p class="maintext">
+                Seagate reveals 59TB HDD
+            </p>
+        </div>
     </div>  
 
   
-
+    <!--this was in the code skeleton, gotta keep it here if js is ever added-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="js/script.js"></script>
 </body>
